@@ -4,14 +4,14 @@ runs:
   using: composite
   steps:
     - run: npm run build
-      shell: sh
+      shell: bash
     - run: npm -w packages/core test
-      shell: sh
+      shell: bash
     - run: npm -w packages/dom test
-      shell: sh
+      shell: bash
     - run: npm -w packages/react-dom test
-      shell: sh
+      shell: bash
     - run: npm -w packages/react test
-      shell: sh
+      shell: bash
     - run: npm -w packages/vue test
-      shell: sh
+      shell: bash

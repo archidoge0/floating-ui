@@ -9,6 +9,6 @@ runs:
         node-version: '17'
     - uses: bahmutov/npm-install@v1
     - run: npm run lint
-      shell: sh
+      shell: bash
     - run: npm run test:types
-      shell: sh
+      shell: bash

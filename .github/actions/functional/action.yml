@@ -9,14 +9,14 @@ runs:
         node-version: '17'
     - uses: bahmutov/npm-install@v1
     - run: npx playwright install-deps
-      shell: sh
+      shell: bash
     - run: npx playwright install
-      shell: sh
+      shell: bash
     - run: npm run build
-      shell: sh
-    - run: npm run test:functional
-      shell: sh
-    - uses: actions/upload-artifact@v2
+      shell: bash
+    - run: npm run test:functional -- --update-snapshots
+      shell: bash
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: visual-snapshots-diff
