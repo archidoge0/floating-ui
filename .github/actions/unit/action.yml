@@ -4,14 +4,26 @@ runs:
   using: composite
   steps:
     - run: npm run build
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 00-npm_run_build
     - run: npm -w packages/core test
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 01-npm_-w_packages_core_test
     - run: npm -w packages/dom test
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 02-npm_-w_packages_dom_test
     - run: npm -w packages/react-dom test
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 03-npm_-w_packages_react-dom_test
     - run: npm -w packages/react test
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 04-npm_-w_packages_react_test
     - run: npm -w packages/vue test
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 05-npm_-w_packages_vue_test

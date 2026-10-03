@@ -6,9 +6,13 @@ runs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: '17'
+        node-version: "17"
     - uses: bahmutov/npm-install@v1
     - run: npm run lint
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 03-npm_run_lint
     - run: npm run test:types
-      shell: sh
+      shell: bash /home/runner/ghav-bin/trace-shell.sh {0}
+      env:
+        GHAV_SUB: 04-npm_run_test_types
